@@ -10,3 +10,6 @@ normal file--> git init --> untracked file(working directory)--> git add . --> s
 
 
  repository-- stores 3 things-what files are changed, who changed it, when it was changed(Git ye sab record rakhta hai /manage karta hai)-->ye sab information .git file mein store hoti hai jo ki hidden file hoti hai
+
+
+ git checkout -- ye command humare project ko kisi bhi purane version pe le ja sakta hai(master likhne se pehle wale version pe le ja sakta hai)
