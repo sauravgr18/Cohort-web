@@ -1,0 +1,6 @@
+Git init— ye command batata hai git ko ki chalu kar do mange karna is folder ko
+	(ye dirf ek baar chalaya jata hai project mein)
+
+Git add .
+
+Git commit -m” jo message likhna chahte ho”- ye bata rahe hote hai ki git ek particular time mein humara project kaisa dikh raha hoga
