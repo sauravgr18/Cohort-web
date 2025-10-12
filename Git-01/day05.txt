@@ -1,3 +1,9 @@
+colllaboration -multiple logon ke sath milke kaam karna on  a single project---Github
+Version control system - ek aisa system jo humare project ke har ek version ko save karke rakhta hai
+	taaki hum kabhi bhi purane version pe ja sakein aur compare kar sakein ki humne kya changes kiye hain--git
+
+
+
 Git init— ye command batata hai git ko ki chalu kar do mange karna is folder ko
 	(ye dirf ek baar chalaya jata hai project mein)
 

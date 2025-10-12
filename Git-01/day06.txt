@@ -1,0 +1,12 @@
+nornal folder(git version control nahi kaarti) ->by running git init command it brcomes-->working directory - jaha hum apna kaam karte hain
+ staging area - jaha hum apne changes ko commit karne ke liye ready karte hain(preview karte hain)
+ repository - jaha hum apne project ke sare versions ko store karte hain
+
+
+
+normal file--> git init --> untracked file(working directory)--> git add . --> staged file(staginng area) --> git commit -m "message" --> local repository
+
+ U--stand for untracked file-- matlab ki ye file git dekh to raha lekin record manage nahi kar raha
+
+
+ repository-- stores 3 things-what files are changed, who changed it, when it was changed(Git ye sab record rakhta hai /manage karta hai)-->ye sab information .git file mein store hoti hai jo ki hidden file hoti hai
