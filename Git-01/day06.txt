@@ -13,3 +13,6 @@ normal file--> git init --> untracked file(working directory)--> git add . --> s
 
 
  git checkout -- ye command humare project ko kisi bhi purane version pe le ja sakta hai(master likhne se pehle wale version pe le ja sakta hai)
+
+
+ to undo the last commit click on 3 dots on the top right corner of the source control tab and click on undo last commit.
