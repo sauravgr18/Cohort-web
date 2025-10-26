@@ -1,0 +1,44 @@
+@font-face {
+    font-family: horror;
+    src: url(../Shadow\ of\ the\ Deads.ttf);
+}
+
+@font-face {
+    font-family: test;
+    src: url(./test);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    color: aqua;
+    /* to get the size of font */
+    font-size: 100px; 
+    /* to change the styling */
+    font-family: Arial, Helvetica, sans-serif;
+    /* to change the motapa of letters */
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    text-transform: capitalize;
+}
+/*  # -> it is used to target an id (case sensitivehota hai) agar ek specific ko target karna hai to id use karte hai  */
+#Hero{
+    color: red;
+    text-transform: capitalize;
+    font-family: test ;
+}
+
+/* . ->it is used to target a class-> agar ek group ko target karna hai to class ka use karte hai   */
+.iit{
+    background-color: beige;
+}
+/* id aur class dono ek sath diya ja sakta hai kisi bhi element ko  */

@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#head{
+    height: 100%;
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1966);
+    /* background-size is used to cover the image in the screen if it is cover->it will cover width wise and if it is contains it will cover horizontal wise so if space is left it  will repeat to stop repeat we can use background-repeat */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+/* 
+Margin-it is an imaginary space outside container -it can be negative
+padding-it is imaginary space inside the container -it cannot be negative */

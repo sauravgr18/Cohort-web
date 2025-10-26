@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#box1{
+    height: 100px;
+    width: 100px;
+    /* to give a shade version */
+    background: linear-gradient(red,blue);
+}
+#box2{
+    height: 100px;
+    width: 100px;
+    /* if we want to change the alignment we use to right/top/bottom(default)/left */
+    background: linear-gradient(to right, green,blue);
+}
+#box3{
+    height: 100px;
+    width: 100px;
+       /* to get diagonal */
+    background: linear-gradient(to right bottom,pink,blue);
+}
+#box4{
+    height: 100px;
+    width: 100px;
+    /* we can also give percentage of what colur we want at max */
+    background: linear-gradient(to left bottom,black 40%,orange);
+
+}
+
+
+/* % aur pixels ke beeck ka difference */
+/* pixels kisi ke respect mein nahi hota hai 
+% hota hai parent ke respect mai->agar child div hai to parent div ke aur agar parent div hai to body ke respect mein change hota hai  */
+#box5{
+    height:10%;
+    width: 100%;
+    /* if we want circular distribution */
+    background: radial-gradient(yellow,red);
+}
