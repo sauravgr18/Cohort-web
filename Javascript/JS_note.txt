@@ -1,0 +1,156 @@
+----------------------------------------var,let,const----------------------------------------------
+var-old tarika hai -
+    -window mein embedded ho jata hai
+    -function scoped hota hai matlab ek function mein declare hua to bahr use  nahi ho sakta
+    -par block scoped nahi hota hai matlab block mein declre hua to bahr use ho sakta hai(if,for,while ke andar)
+let-new tarika hai -
+    -block scoped hota hai matlab block mein declare hua to bahr use nahi ho sakta
+    -window mein embedded nahi hota hai
+const-constant value hota hai jo change nahi hota hai
+    -block scoped hota hai
+    -value change nahi hota hai
+    -declare karte waqt hi value assign karni hoti hai
+    -object aur array ke andar ki value change ho sakti hai, lekin pura object ya array reassign nahi ho sakta
+    eg: const obj={a:1}; obj.a=2; //allowed, obj={b:2}; //not allowed
+    -object.freeze() se object ko freeze kar sakte hain jisse uski properties change na ho sakein
+    eg: const obj=Object.freeze({a:1}); obj.a=2; //not allowed
+    -window mein embedded nahi hota hai
+//example
+function testVar(){ 
+    var x=1;
+    if(true){
+        var x=2; //same variable
+        console.log(x); //2
+    }
+    console.log(x); //2
+}
+
+function testLet(){ 
+    let y=1;
+    if(true){
+        let y=2; //different variable
+        console.log(y); //2
+    }
+    console.log(y); //1
+}
+
+testVar();
+testLet();
+//const example
+const z=10;
+//z=20; //error
+const obj={a:1,b:2};
+obj.a=10; //allowed
+//obj={c:3}; //error
+console.log(z); //10
+console.log(obj); //{a:10,b:2}
+
+
+-----------------------------hoisting---------------------------------------------------
+hoisting ka matlab hai ki variable aur function jab js mein banta hai to do hisse mein toot jata hai:
+1. Declaration part jo sabse upar chala jata hai    
+2. Initialization part jo original jagah par rehta hai
+//is wajah se hum variable aur function ko unke declaration se pehle bhi use kar sakte hain
+//var hoisting
+console.log(a); //undefined (not error)
+var a=5;
+//equivalent to
+var a;
+console.log(a); //undefined
+a=5;
+//let and const hoisting
+console.log(b); //ReferenceError
+let b=10;
+//equivalent to
+let b; //in temporal dead zone
+console.log(b); //ReferenceError cannot access 'b' before initialization
+b=10;
+//function hoisting
+foo(); //works
+function foo(){
+    console.log("Hello");
+}
+//equivalent to
+function foo(){
+    console.log("Hello");
+}
+foo(); //works
+//function expression with var
+bar(); //TypeError
+var bar=function(){
+    console.log("World");
+};
+//equivalent to
+var bar;
+bar(); //TypeError
+bar=function(){
+    console.log("World");
+};
+//function expression with let
+baz(); //ReferenceError
+let baz=function(){
+    console.log("!");
+};
+//equivalent to
+let baz; //in temporal dead zone
+baz(); //ReferenceError
+baz=function(){
+    console.log("!");
+};
+
+----------------------------------temporal dead zone(TDZ)-------------------------------------------
+TDZ ka matlab hai ki jab hum let ya const variable declare karte hain to wo ek specific block ke andar ek special state mein chala jata hai jise temporal dead zone kehte hain
+TDZ ke andar hum us variable ko access nahi kar sakte hain jab tak ki wo variable initialize na ho jaye
+TDZ ka duration hota hai jab tak variable declare hota hai uske initialization tak
+//example
+{
+    console.log(x); //ReferenceError
+    let x=10;
+    console.log(x); //10
+}
+{
+    console.log(y); //ReferenceError
+    const y=20;
+    console.log(y); //20
+}
+{
+    var z=30;
+    console.log(z); //30
+}
+{
+    console.log(a); //undefined
+    var a=40;
+    console.log(a); //40
+}
+----------------------------------Data types in JS------------------------------------------------
+primitive data types:aisi sari value jinki apni alag memory location hoti hai aur jinhe hum directly manipulate kar sakte hain-jinki copy karne par real copy milti hai
+1. Number
+2. String
+3. Boolean
+4. Null
+5. Undefined
+6. Symbol
+7. BigInt
+null-matlab hota hai ki jaan boojh kar kisi variable ko empty value dena
+undefined-matlab hota hai ki variable ko value assign nahi ki gayi hai
+
+non-primitive data types:aisi sari value jinki apni alag memory location nahi hoti hai aur jinhe hum directly manipulate nahi kar sakte hain-jinki copy karne par reference milta hai parent value ki
+1. Object
+2. Array
+3. Function
+
+eg
+//primitive data types
+let a=12
+let b=a //copy of value-b totally alag memory location mein hai
+b=15
+a=a+2
+console.log(a); //14
+console.log(b); //15
+
+//non-primitive data types
+let obj1={name:"Alice",age:25}
+let obj2=obj1 //reference of obj1
+obj2.age=30
+console.log(obj1.age); //30
+console.log(obj2.age); //30
